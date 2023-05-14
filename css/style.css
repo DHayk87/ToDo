@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 20px;
+    margin-left: 20px;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background: #066acd;
+    text-transform: capitalize;
+}
+
+img:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 6px gray);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+
+}
+
+.toDo{
+    padding: 50px 0;
+}
+
+.flexcont {
+    display: flex;
+    justify-content: center;
+
+}
+
+.list {
+    min-width: 50%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px 20px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.52);
+}
+
+input {
+    padding: 15px 25px;
+    border: 2px solid rgb(29, 103, 222);
+    border-radius: 5px;
+}
+
+button {
+    padding: 15px 25px;
+    border: 2px solid rgb(29, 103, 222);
+    background-color: rgb(29, 103, 222);
+    color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.todo-content{
+    display: grid;
+    gap: 20px;
+}
+
+.newlist {
+    margin-top: 30px;
+}
+
+.newlist li {
+    border: 2px solid rgb(29, 103, 222);
+    padding: 15px 25px;
+    border-radius: 5px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .3s;
+    z-index: 2;
+    user-select: none;
+}
+
+
+.newlist li:hover{
+    background-color: #f0f8ff;
+    cursor: pointer;
+}
+.newlist li:active{
+    background-color: #c4e2fc;
+}
+
+input[type=checkbox] {
+    margin-right: 10px;
+}
+
+/* ***************   Spinner *************** */
+
+.spiner-wraper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: grid;
+    place-items: center;
+}
+
+.half-circle-spinner,
+.half-circle-spinner * {
+    box-sizing: border-box;
+}
+
+.half-circle-spinner {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    position: relative;
+}
+
+.half-circle-spinner .circle {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: calc(60px / 10) solid transparent;
+}
+
+.half-circle-spinner .circle.circle-1 {
+    border-top-color: #ff1d5e;
+    animation: half-circle-spinner-animation 1s infinite;
+}
+
+.half-circle-spinner .circle.circle-2 {
+    border-bottom-color: #ff1d5e;
+    animation: half-circle-spinner-animation 1s infinite alternate;
+}
+
+@keyframes half-circle-spinner-animation {
+    0% {
+        transform: rotate(0deg);
+
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
