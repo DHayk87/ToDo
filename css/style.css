@@ -65,7 +65,7 @@ button {
 }
 
 .newlist {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .newlist li {
@@ -92,6 +92,13 @@ button {
 
 input[type=checkbox] {
     margin-right: 10px;
+}
+
+.alert{
+    margin-top: 20px;
+    font-size: 14px;
+    color: red;
+    padding-left: 26px;
 }
 
 /* ***************   Spinner *************** */

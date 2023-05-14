@@ -3,7 +3,7 @@ import {customFetch} from "./xhr.js"
 const form = document.forms[0]
 let ul = newlist.querySelector('ul')
 const str = 'img/recycle-bin.png'
-
+const warning = document.createElement('p')
 customFetch('https://jsonplaceholder.typicode.com/todos?_limit=20')
     .then((response) => {
         response.forEach((elm) => {
@@ -67,7 +67,6 @@ ul.addEventListener('click', (e) => {
 
 })
 
-
 form.addEventListener('click', (e) => {
     e.preventDefault()
 
@@ -79,8 +78,11 @@ form.addEventListener('click', (e) => {
 
     if (e.target.className == 'add') {
         if (form[0].value == '') {
-            alert('text greq')
+            warning.classList.add('alert')
+            form.insertAdjacentElement('beforeend', warning)
+            warning.textContent = 'Pleas input some task'
         } else {
+            form.lastElementChild.localName == 'p' ? form.lastElementChild.remove() : false
             ul.prepend(drow(form[0].value, false))
             form[0].value = ''
         }
